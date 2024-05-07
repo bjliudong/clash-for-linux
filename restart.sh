@@ -2,13 +2,13 @@
 
 # 自定义action函数，实现通用action功能
 success() {
-  echo -en "\\033[60G[\\033[1;32m  OK  \\033[0;39m]\r"
+  echo -en "\\033[60G[\\033[1;32m  OK  \\033[0;39m]\n"
   return 0
 }
 
 failure() {
   local rc=$?
-  echo -en "\\033[60G[\\033[1;31mFAILED\\033[0;39m]\r"
+  echo -en "\\033[60G[\\033[1;31mFAILED\\033[0;39m]\n"
   [ -x /bin/plymouth ] && /bin/plymouth --details
   return $rc
 }
